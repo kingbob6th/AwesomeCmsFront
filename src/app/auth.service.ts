@@ -8,7 +8,7 @@ interface LoginResponse {
 }
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class AuthService {
   private apiBase = 'http://localhost:5205/api/';
@@ -16,9 +16,19 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(this.apiBase + 'Account/Login', {
-      username,
-      password,
-    });
+    return this.http.post<LoginResponse>(`${this.apiBase}Account/Login`, { username, password });
+  }
+
+  isAuthenticated(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  hasRole(role: string): boolean {
+    const userRole = localStorage.getItem('role');
+    return userRole === role;
+  }
+
+  logout() {
+    localStorage.clear();
   }
 }

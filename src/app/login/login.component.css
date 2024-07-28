@@ -47,3 +47,9 @@ button:disabled {
   background-color: #cccccc;
   cursor: not-allowed; /* Change cursor to indicate disabled state */
 }
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
