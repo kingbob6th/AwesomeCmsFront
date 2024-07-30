@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-interface LoginResponse {
+export interface LoginResponse {
   token: string;
   expiration: string;
+  role: string; // Add role property here
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private apiBase = 'http://localhost:5205/api/';
@@ -16,7 +17,10 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<LoginResponse> {
-    return this.http.post<LoginResponse>(`${this.apiBase}Account/Login`, { username, password });
+    return this.http.post<LoginResponse>(`${this.apiBase}Account/Login`, {
+      username,
+      password,
+    });
   }
 
   isAuthenticated(): boolean {
