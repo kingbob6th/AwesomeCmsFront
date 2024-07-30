@@ -9,7 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router'; // Ensure RouterModule is imported
 
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
@@ -17,6 +17,7 @@ import { EmployeeDialogComponent } from './employees/employee-dialog/employee-di
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component'; // Ensure LoginComponent is imported
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { LoginComponent } from './login/login.component'; // Ensure LoginCompone
     EmployeesComponent,
     EmployeeDialogComponent,
     DashboardComponent,
-    LoginComponent, // Declare LoginComponent if not already
+    LoginComponent // Declare LoginComponent if not already
   ],
   imports: [
     BrowserModule,
@@ -38,10 +39,10 @@ import { LoginComponent } from './login/login.component'; // Ensure LoginCompone
     MatInputModule,
     MatTableModule,
     MatIconModule,
-    RouterModule,
-    AppRoutingModule,
+    RouterModule, // Ensure RouterModule is imported
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
