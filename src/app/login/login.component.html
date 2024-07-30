@@ -5,27 +5,22 @@
       <mat-card-content>
         <mat-form-field appearance="fill">
           <mat-label>Username</mat-label>
-          <input
-            matInput
-            type="text"
-            [(ngModel)]="username"
-            name="username"
-            required
-          />
+          <input matInput type="text" [(ngModel)]="username" name="username" required>
+          <mat-error *ngIf="loginForm.controls['username']?.invalid && loginForm.controls['username']?.touched">
+            Username is required
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input
-            matInput
-            type="password"
-            [(ngModel)]="password"
-            name="password"
-            required
-          />
+          <input matInput type="password" [(ngModel)]="password" name="password" required>
+          <mat-error *ngIf="loginForm.controls['password']?.invalid && loginForm.controls['password']?.touched">
+            Password is required
+          </mat-error>
         </mat-form-field>
+        <mat-error *ngIf="errorMessage">{{ errorMessage }}</mat-error>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Login</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
       </mat-card-actions>
     </mat-card>
   </form>

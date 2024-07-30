@@ -1,14 +1,12 @@
-<h1 mat-dialog-title>
-  {{ data.employeeId ? "Edit Employee" : "Add Employee" }}
-</h1>
+<h1 mat-dialog-title>{{data.employeeId ? 'Edit Employee' : 'Add Employee'}}</h1>
 <div mat-dialog-content>
-  <mat-form-field>
+  <mat-form-field appearance="fill">
     <mat-label>Employee Name</mat-label>
-    <input matInput [(ngModel)]="data.employeeName" />
+    <input matInput [(ngModel)]="data.employeeName" name="employeeName" required>
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field appearance="fill">
     <mat-label>Salary</mat-label>
-    <input matInput type="number" [(ngModel)]="data.salary" />
+    <input matInput type="number" [(ngModel)]="data.salary" name="salary" required>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

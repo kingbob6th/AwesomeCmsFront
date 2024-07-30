@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Employee } from '../employee.service'; // Ensure Employee is correctly imported
+import { Employee } from '../employee.service';
 
 @Component({
   selector: 'app-employee-dialog',
@@ -9,8 +9,7 @@ import { Employee } from '../employee.service'; // Ensure Employee is correctly 
 export class EmployeeDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<EmployeeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Employee
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: Employee) {}
 
   onCancel(): void {
     this.dialogRef.close();

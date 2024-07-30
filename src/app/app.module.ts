@@ -9,14 +9,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router'; // Ensure RouterModule is imported
+import { RouterModule } from '@angular/router';
+//import { MatErrorModule } from '@angular/material/form-field'; // Import MatErrorModule
 
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeDialogComponent } from './employees/employee-dialog/employee-dialog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component'; // Ensure LoginComponent is imported
+import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -25,21 +26,21 @@ import { MatDialogModule } from '@angular/material/dialog';
     EmployeesComponent,
     EmployeeDialogComponent,
     DashboardComponent,
-    LoginComponent // Declare LoginComponent if not already
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    FormsModule, // Ensure FormsModule is imported
+    FormsModule,
     MatButtonModule,
-    MatCardModule, // Ensure MatCardModule is imported
+    MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
     MatIconModule,
-    RouterModule, // Ensure RouterModule is imported
+    RouterModule,
     AppRoutingModule
   ],
   providers: [],
